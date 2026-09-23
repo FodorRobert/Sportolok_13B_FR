@@ -121,5 +121,39 @@ namespace portolok_13B_FR.Controllers
 
         }
 
+        [HttpPut]
+        public object UpdatePost([FromQuery] int id, [FromBody] UpdateEredmenyDTO updateEredmenyDTO)
+        {
+
+            var connector = new MySqlConnection(ConnectionString);
+            connector.Open();
+
+            var sql = @"UPDATE `eredmeny` SET `Competition`='@competition',`Description`='@description',`ResultTime`='@resulttime',`UpdateTime`='@updatetime',`SportoloId`='@sportoloid' WHERE 1";
+
+            var cmd = new MySqlCommand(sql, connector);
+
+            cmd.Parameters.AddWithValue("@competition", updateEredmenyDTO.Competition);
+            cmd.Parameters.AddWithValue("@description", updateEredmenyDTO.Description);
+            cmd.Parameters.AddWithValue("@resulttime", DateTime.Now);
+            cmd.Parameters.AddWithValue("@updatetime", DateTime.Now);
+            cmd.Parameters.AddWithValue("@sportoloid", id);
+            cmd.Parameters.AddWithValue("@id", id);
+
+            cmd.ExecuteNonQuery();
+
+            var updatePost = new Eredmeny
+            {
+                Competition = updateEredmenyDTO.Competition,
+                Description = updateEredmenyDTO.Description,
+                ResultTime = DateTime.Now,
+                UpdateTime = DateTime.Now,
+                SportoloId = id
+            };
+
+            connector.Close();
+
+            return updatePost;
+        }
+
     }
 }

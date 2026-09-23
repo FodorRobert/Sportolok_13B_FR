@@ -47,6 +47,27 @@
   },
   {
     "ContainingType": "portolok_13B_FR.Controllers.EredmenyController",
+    "Method": "UpdatePost",
+    "RelativePath": "api/Eredmeny",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "updateEredmenyDTO",
+        "Type": "portolok_13B_FR.Models.DTOs.UpdateEredmenyDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "portolok_13B_FR.Controllers.EredmenyController",
     "Method": "GetEredmeny",
     "RelativePath": "api/Eredmeny/{id}",
     "HttpMethod": "GET",
