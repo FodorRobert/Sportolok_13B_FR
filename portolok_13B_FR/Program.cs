@@ -1,4 +1,6 @@
 
+using Scalar.AspNetCore;
+
 namespace portolok_13B_FR
 {
     public class Program
@@ -19,6 +21,7 @@ namespace portolok_13B_FR
             if (app.Environment.IsDevelopment())
             {
                 app.MapOpenApi();
+                app.MapScalarApiReference();
             }
 
             app.UseHttpsRedirection();

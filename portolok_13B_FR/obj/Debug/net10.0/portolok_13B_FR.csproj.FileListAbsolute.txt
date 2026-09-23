@@ -34,3 +34,4 @@ C:\Users\fodorr\Desktop\2026-2027\BackEnd\portolok_13B_FR\portolok_13B_FR\obj\De
 C:\Users\fodorr\Desktop\2026-2027\BackEnd\portolok_13B_FR\portolok_13B_FR\obj\Debug\net10.0\portolok_13B_FR.pdb
 C:\Users\fodorr\Desktop\2026-2027\BackEnd\portolok_13B_FR\portolok_13B_FR\obj\Debug\net10.0\portolok_13B_FR.genruntimeconfig.cache
 C:\Users\fodorr\Desktop\2026-2027\BackEnd\portolok_13B_FR\portolok_13B_FR\obj\Debug\net10.0\ref\portolok_13B_FR.dll
+C:\Users\fodorr\Desktop\2026-2027\BackEnd\portolok_13B_FR\portolok_13B_FR\obj\Debug\net10.0\portolok_13B_FR.sourcelink.json
