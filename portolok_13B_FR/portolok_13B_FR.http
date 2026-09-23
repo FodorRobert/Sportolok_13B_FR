@@ -1,0 +1,6 @@
+@portolok_13B_FR_HostAddress = http://localhost:5272
+
+GET {{portolok_13B_FR_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
