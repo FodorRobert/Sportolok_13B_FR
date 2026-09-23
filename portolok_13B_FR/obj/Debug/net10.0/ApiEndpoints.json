@@ -85,27 +85,17 @@
   {
     "ContainingType": "portolok_13B_FR.Controllers.EredmenyController",
     "Method": "GetEredmeny",
-    "RelativePath": "api/Eredmeny/{id}",
+    "RelativePath": "api/Eredmeny/byid",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "Id",
+        "Name": "id",
         "Type": "System.Int32",
-        "IsRequired": true
+        "IsRequired": false
       }
     ],
-    "ReturnTypes": [
-      {
-        "Type": "System.Collections.Generic.List\u00601[[portolok_13B_FR.Models.Eredmeny, portolok_13B_FR, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
+    "ReturnTypes": []
   }
 ]

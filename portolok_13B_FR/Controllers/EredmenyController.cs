@@ -48,40 +48,34 @@ namespace portolok_13B_FR.Controllers
 
         }
 
-        [HttpGet("{id}")]
-        public List<Eredmeny> GetEredmeny(int Id)
+        [HttpGet("byid")]
+        public object GetEredmeny(int id)
         {
-
-            List<Eredmeny> eredmeny = new();
 
             var connector = new MySqlConnection(ConnectionString);
             connector.Open();
 
-            string sql = "SELECT * FROM `eredmeny` WHERE 'Id'=@id";
+            string sql = @"SELECT `Competition`, `Description`, `ResultTime`, `UpdateTime`, `SportoloId` FROM `eredmeny` WHERE `Id`=@id";
 
             var cmd = new MySqlCommand(sql, connector);
-            cmd.Parameters.AddWithValue("@id", Id);
+            cmd.Parameters.AddWithValue("@id", id);
 
             var dataReader = cmd.ExecuteReader();
 
-            while (dataReader.Read())
-            {
-                var eredmeny1 = new Eredmeny
-                {
-                    Id = dataReader.GetInt32(0),
-                    Competition = dataReader.GetString(1),
-                    Description = dataReader.GetString(2),
-                    ResultTime = dataReader.GetDateTime(3),
-                    UpdateTime = dataReader.GetDateTime(4),
-                    SportoloId = dataReader.GetInt32(5)
-                };
+            dataReader.Read();
 
-                eredmeny.Add(eredmeny1);
-            }
+            var eredmeny1 = new 
+            {
+                Competition = dataReader.GetString(0),
+                Description = dataReader.GetString(1),
+                ResultTime = dataReader.GetDateTime(2),
+                UpdateTime = dataReader.GetDateTime(3),
+                SportoloId = dataReader.GetInt32(4)
+            };
 
             connector.Close();
 
-            return eredmeny;
+            return eredmeny1;
 
         }
 

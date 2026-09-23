@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("portolok_13B_FR")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+51e0b3c972afbb40d88b13d4537c2d9f24d3451d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+beae42157ff0410b339035dfcf602267846280db")]
 [assembly: System.Reflection.AssemblyProductAttribute("portolok_13B_FR")]
 [assembly: System.Reflection.AssemblyTitleAttribute("portolok_13B_FR")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
