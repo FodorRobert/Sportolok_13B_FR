@@ -128,7 +128,7 @@ namespace portolok_13B_FR.Controllers
             var connector = new MySqlConnection(ConnectionString);
             connector.Open();
 
-            var sql = @"UPDATE `eredmeny` SET `Competition`='@competition',`Description`='@description',`ResultTime`='@resulttime',`UpdateTime`='@updatetime',`SportoloId`='@sportoloid' WHERE 1";
+            var sql = @"UPDATE `eredmeny` SET `Competition`=@competition,`Description`=@description,`ResultTime`=@resulttime,`UpdateTime`=@updatetime,`SportoloId`=@sportoloid WHERE `Id`=@id";
 
             var cmd = new MySqlCommand(sql, connector);
 
@@ -153,6 +153,27 @@ namespace portolok_13B_FR.Controllers
             connector.Close();
 
             return updatePost;
+        }
+
+        [HttpDelete]
+        public object DeleteEredmeny(int id)
+        {
+
+            var connector = new MySqlConnection(ConnectionString);
+            connector.Open();
+
+            var sql = $"DELETE FROM eredmeny WHERE id = @id";
+
+            var cmd = new MySqlCommand(sql, connector);
+
+            cmd.Parameters.AddWithValue(@"id", id);
+
+            cmd.ExecuteNonQuery();
+
+            connector.Close();
+
+            return new { message = "Sikeres törlés!" };
+
         }
 
     }

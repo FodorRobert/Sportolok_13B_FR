@@ -68,6 +68,22 @@
   },
   {
     "ContainingType": "portolok_13B_FR.Controllers.EredmenyController",
+    "Method": "DeleteEredmeny",
+    "RelativePath": "api/Eredmeny",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "portolok_13B_FR.Controllers.EredmenyController",
     "Method": "GetEredmeny",
     "RelativePath": "api/Eredmeny/{id}",
     "HttpMethod": "GET",
