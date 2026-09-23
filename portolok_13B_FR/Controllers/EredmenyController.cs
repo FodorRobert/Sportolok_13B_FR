@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using MySqlConnector;
 using portolok_13B_FR.Models;
+using portolok_13B_FR.Models.DTOs;
 
 namespace portolok_13B_FR.Controllers
 {
@@ -81,6 +82,42 @@ namespace portolok_13B_FR.Controllers
             connector.Close();
 
             return eredmeny;
+
+        }
+
+        [HttpPost]
+        public Eredmeny AddNewEredmeny(AddEredmenyDTO eredmeny)
+        {
+
+            var connector = new MySqlConnection(ConnectionString);
+            connector.Open();
+
+            var e = new Eredmeny
+            {
+
+                Competition = eredmeny.Competition,
+                Description = eredmeny.Description,
+                ResultTime = DateTime.Now,
+                UpdateTime = DateTime.Now,
+                SportoloId = eredmeny.sportoloId
+
+            };
+
+            var sql = $"INSERT INTO `eredmeny`(`Competition`, `Description`, `ResultTime`, `UpdateTime`, `SportoloId`) VALUES (@competition, @description, @resulttime, @updatetime, @sportoloid)";
+
+            var cmd = new MySqlCommand(sql, connector);
+
+            cmd.Parameters.AddWithValue("@competition", e.Competition);
+            cmd.Parameters.AddWithValue("@description", e.Description);
+            cmd.Parameters.AddWithValue("@resulttime", e.ResultTime);
+            cmd.Parameters.AddWithValue("@updatetime", e.UpdateTime);
+            cmd.Parameters.AddWithValue("@sportoloid", e.SportoloId);
+
+            cmd.ExecuteNonQuery();
+
+            connector.Close();
+
+            return e;
 
         }
 

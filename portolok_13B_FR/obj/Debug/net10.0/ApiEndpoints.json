@@ -21,6 +21,32 @@
   },
   {
     "ContainingType": "portolok_13B_FR.Controllers.EredmenyController",
+    "Method": "AddNewEredmeny",
+    "RelativePath": "api/Eredmeny",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "eredmeny",
+        "Type": "portolok_13B_FR.Models.DTOs.AddEredmenyDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "portolok_13B_FR.Models.Eredmeny",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "portolok_13B_FR.Controllers.EredmenyController",
     "Method": "GetEredmeny",
     "RelativePath": "api/Eredmeny/{id}",
     "HttpMethod": "GET",
